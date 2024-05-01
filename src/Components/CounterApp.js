@@ -3,7 +3,7 @@ import CounterModal from "./CounterModal";
 
 const CounterApp = () => {
     const [count, setCount] = useState(0);
-    const [showOrHideModal, setShowOrHideModal] = useState(false);
+    const [openModal, setOpenModal] = useState(false);
     const [counterObj, setCounterObj] = useState({
         intervalRef: null,
         timerRunning: false,
@@ -23,13 +23,13 @@ const CounterApp = () => {
         <div className=" text-center ">
             <button
                 className=" btn btn-outline-success btn-lg btn-light m-5"
-                onClick={() => setShowOrHideModal(!showOrHideModal)}>
+                onClick={() => setOpenModal(!openModal)}>
                 Open Counter
             </button>
             <CounterModal
                 count={count}
-                showOrHideModal={showOrHideModal}
-                setShowOrHideModal={setShowOrHideModal}
+                openModal={openModal}
+                setOpenModal={setOpenModal}
                 counterObj={counterObj}
                 stopCounter={stopCounter}
                 startCounter={startCounter}
